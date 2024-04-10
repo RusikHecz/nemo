@@ -18,10 +18,6 @@ final class AirportController extends Controller
      *     operationId="getListOfAirports",
      *     tags={"Airport"},
      *
-     *     @OA\Parameter (ref="#/components/parameters/__x_user"),
-     *     @OA\Parameter (ref="#/components/parameters/__limit"),
-     *     @OA\Parameter (ref="#/components/parameters/__page"),
-     *
      *     @OA\Parameter(
      *         name="airportName",
      *         in="query",

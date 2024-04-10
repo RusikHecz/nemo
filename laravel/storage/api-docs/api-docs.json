@@ -1,0 +1,51 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Мой API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/airports": {
+            "get": {
+                "tags": [
+                    "Airport"
+                ],
+                "summary": "Полный список аэропортов",
+                "operationId": "getListOfAirports",
+                "parameters": [
+                    {
+                        "name": "airportName",
+                        "in": "query",
+                        "description": "название аэропорта",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Список рейсов",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    }
+}
