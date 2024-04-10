@@ -22,8 +22,8 @@ class AirportFactory extends Factory
 	        'airport_name_en' => $this->faker->word,
 	        'area'            => $this->faker->word,
 	        'country'         => $this->faker->country,
-	        'latitude'        => $this->faker->latitude,
-	        'longitude'       => $this->faker->longitude,
+	        'latitude'        => (string)$this->faker->latitude,
+	        'longitude'       => (string)$this->faker->longitude,
 	        'timezone'        => $this->faker->timezone,
         ];
     }
