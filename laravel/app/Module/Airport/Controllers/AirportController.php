@@ -30,7 +30,7 @@ final class AirportController extends Controller
      *
      *     @OA\Response(
      *         response=200,
-     *         description="Список рейсов",
+     *         description="Полный список аэропортов",
      *         @OA\JsonContent(
      *             @OA\Property(property="data",
      *                 type="object",
@@ -45,7 +45,6 @@ final class AirportController extends Controller
      */
     public function index(): void
     {
-//        $this->authorize(PermissionList::AIRPORT_INDEX);
-        dd('index');
+        $this->authorize(PermissionList::AIRPORT_INDEX);
     }
 }
