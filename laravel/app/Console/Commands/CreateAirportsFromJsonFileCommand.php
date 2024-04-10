@@ -12,7 +12,7 @@ final class CreateAirportsFromJsonFileCommand extends Command
 {
     protected $signature = 'create:airports-from-json';
 
-    protected $description = 'Присваиваем к городам юг,запад,восток,север';
+    protected $description = 'Сохранения данных из json file в таблицу airports';
 
     public function handle(): void
     {
