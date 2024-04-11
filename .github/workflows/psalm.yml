@@ -32,4 +32,5 @@ jobs:
 
       # Swagger
       - name: Validate Swagger
+        working-directory: ./laravel
         run: php artisan l5-swagger:generate
