@@ -23,7 +23,7 @@
 
 
 <p>Конечный результат</p>
-<p>Был поднят докер файл, с php 8.2, mysql 5,7, laravel 10, nginx, redis, rabbit (часа 3)</p>
+<p>Был поднят докер файл, с php 8.2, mysql 8.3, laravel 10, nginx, redis, rabbit (часа 3)</p>
 <p>mysql root: root and pass: root</p>
 <p>После этого создал новый laravel проект с 10 версией (10 минут)</p>
 <p>Был создан репозитории и залит выше указанные файлы (10 мин)</p>
