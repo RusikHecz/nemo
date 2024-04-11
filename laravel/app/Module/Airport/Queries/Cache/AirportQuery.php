@@ -25,5 +25,8 @@ final readonly class AirportQuery implements AirportQueryContract
         }
 
         return $this->cityQuery->paginate($DTO);
+
+//	    $cacheKey = CacheConstants::AIRPORT_ALL_CACHE_KEY . $DTO->page;
+//	    return Cache::remember($cacheKey, CacheConstants::CACHE_TTL_DAY, fn() => $this->cityQuery->paginate($DTO));
     }
 }
