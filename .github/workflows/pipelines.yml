@@ -39,7 +39,7 @@ jobs:
         working-directory: ./laravel
         run: php artisan l5-swagger:generate
 
-#      # АвтоТесты
-#      - name: Run Test
-#        working-directory: ./laravel
-#        run: php artisan test
+      # АвтоТесты
+      - name: Run Test
+        working-directory: ./laravel
+        run: php artisan test
