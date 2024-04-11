@@ -10,7 +10,7 @@ use Illuminate\Routing\Controller as BaseController;
 /**
  * @OA\Info(title="Мой API", version="1.0.0")
  */
-
+//test psalm
 class Controller extends BaseController
 {
     use AuthorizesRequests;
