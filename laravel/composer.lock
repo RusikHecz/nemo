@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "180f8028b99358bc92e9092de73cf31f",
+    "content-hash": "6c679153b901da8baf57ec896c813484",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.304.1",
+            "version": "3.304.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6dac9b3257873a807ac73f6dc4418bdc49a5d9db"
+                "reference": "2435079c3e1a08148d955de15ec090018114f35a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6dac9b3257873a807ac73f6dc4418bdc49a5d9db",
-                "reference": "6dac9b3257873a807ac73f6dc4418bdc49a5d9db",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2435079c3e1a08148d955de15ec090018114f35a",
+                "reference": "2435079c3e1a08148d955de15ec090018114f35a",
                 "shasum": ""
             },
             "require": {
@@ -207,9 +207,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.304.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.304.2"
             },
-            "time": "2024-04-09T19:25:27+00:00"
+            "time": "2024-04-10T18:05:32+00:00"
         },
         {
             "name": "brianium/paratest",
@@ -1976,59 +1976,6 @@
             "time": "2023-11-12T22:16:48+00:00"
         },
         {
-            "name": "graylog2/gelf-php",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bzikarsky/gelf-php.git",
-                "reference": "29ef48fa6eac6c8787b588949483f1739c57ad4f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bzikarsky/gelf-php/zipball/29ef48fa6eac6c8787b588949483f1739c57ad4f",
-                "reference": "29ef48fa6eac6c8787b588949483f1739c57ad4f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.0",
-                "psr/log": "^1|^2|^3"
-            },
-            "provide": {
-                "psr/log-implementation": "3.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.6|^10.1",
-                "squizlabs/php_codesniffer": "^3.6",
-                "vimeo/psalm": "^5.11"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Gelf\\": "src/Gelf"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Zikarsky",
-                    "email": "benjamin@familie-zikarsky.de"
-                },
-                {
-                    "name": "gelf-php contributors",
-                    "homepage": "https://github.com/bzikarsky/gelf-php/contributors"
-                }
-            ],
-            "description": "A php implementation to send log-messages to a GELF compatible backend like Graylog2.",
-            "support": {
-                "issues": "https://github.com/bzikarsky/gelf-php/issues",
-                "source": "https://github.com/bzikarsky/gelf-php/tree/2.0.1"
-            },
-            "time": "2023-05-23T14:45:24+00:00"
-        },
-        {
             "name": "guzzlehttp/guzzle",
             "version": "7.8.1",
             "source": {
@@ -2440,63 +2387,6 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
-            "name": "hedii/laravel-gelf-logger",
-            "version": "8.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hedii/laravel-gelf-logger.git",
-                "reference": "90c80b7eb5bc3dcd5694770a4d5c44c7173b2194"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hedii/laravel-gelf-logger/zipball/90c80b7eb5bc3dcd5694770a4d5c44c7173b2194",
-                "reference": "90c80b7eb5bc3dcd5694770a4d5c44c7173b2194",
-                "shasum": ""
-            },
-            "require": {
-                "graylog2/gelf-php": "^2.0",
-                "illuminate/log": "^10.0",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^8.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Hedii\\LaravelGelfLogger\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "hedii",
-                    "homepage": "https://hedichaibi.com"
-                }
-            ],
-            "description": "A Laravel package to send logs to a gelf compatible backend like graylog",
-            "keywords": [
-                "gelf",
-                "graylog",
-                "graylog2",
-                "hedii",
-                "laravel",
-                "laravel-gelf",
-                "log",
-                "logging",
-                "php",
-                "udp"
-            ],
-            "support": {
-                "issues": "https://github.com/hedii/laravel-gelf-logger/issues",
-                "source": "https://github.com/hedii/laravel-gelf-logger"
-            },
-            "time": "2023-08-14T19:20:53+00:00"
-        },
-        {
             "name": "jean85/pretty-package-versions",
             "version": "2.0.6",
             "source": {
@@ -2557,16 +2447,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.48.5",
+            "version": "v10.48.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a8b682e1371338848637f638aedaef2f7607d36f"
+                "reference": "118c686992f4b90d4da6deaf0901315c337bbaf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a8b682e1371338848637f638aedaef2f7607d36f",
-                "reference": "a8b682e1371338848637f638aedaef2f7607d36f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/118c686992f4b90d4da6deaf0901315c337bbaf9",
+                "reference": "118c686992f4b90d4da6deaf0901315c337bbaf9",
                 "shasum": ""
             },
             "require": {
@@ -2760,7 +2650,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-04-09T14:48:50+00:00"
+            "time": "2024-04-10T14:57:20+00:00"
         },
         {
             "name": "laravel/passport",
@@ -8104,16 +7994,16 @@
         },
         {
             "name": "sentry/sentry",
-            "version": "4.6.1",
+            "version": "4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php.git",
-                "reference": "5a94184175e5830b589bf923da8c9c3af2c0f409"
+                "reference": "d6769b2a5e6bf19ed3bbfbf52328ceaf8e6fcb1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/5a94184175e5830b589bf923da8c9c3af2c0f409",
-                "reference": "5a94184175e5830b589bf923da8c9c3af2c0f409",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/d6769b2a5e6bf19ed3bbfbf52328ceaf8e6fcb1f",
+                "reference": "d6769b2a5e6bf19ed3bbfbf52328ceaf8e6fcb1f",
                 "shasum": ""
             },
             "require": {
@@ -8177,7 +8067,7 @@
             ],
             "support": {
                 "issues": "https://github.com/getsentry/sentry-php/issues",
-                "source": "https://github.com/getsentry/sentry-php/tree/4.6.1"
+                "source": "https://github.com/getsentry/sentry-php/tree/4.7.0"
             },
             "funding": [
                 {
@@ -8189,7 +8079,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-03-08T08:18:09+00:00"
+            "time": "2024-04-10T13:22:13+00:00"
         },
         {
             "name": "sentry/sentry-laravel",
@@ -8282,16 +8172,16 @@
         },
         {
             "name": "swagger-api/swagger-ui",
-            "version": "v5.14.0",
+            "version": "v5.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swagger-api/swagger-ui.git",
-                "reference": "7bcf090d982714cd9c230c598c8eef38f1427c5b"
+                "reference": "1fb274ae8527967ae375c25dd8223494782f0775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/7bcf090d982714cd9c230c598c8eef38f1427c5b",
-                "reference": "7bcf090d982714cd9c230c598c8eef38f1427c5b",
+                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/1fb274ae8527967ae375c25dd8223494782f0775",
+                "reference": "1fb274ae8527967ae375c25dd8223494782f0775",
                 "shasum": ""
             },
             "type": "library",
@@ -8337,9 +8227,9 @@
             ],
             "support": {
                 "issues": "https://github.com/swagger-api/swagger-ui/issues",
-                "source": "https://github.com/swagger-api/swagger-ui/tree/v5.14.0"
+                "source": "https://github.com/swagger-api/swagger-ui/tree/v5.15.1"
             },
-            "time": "2024-04-08T08:27:58+00:00"
+            "time": "2024-04-11T07:22:32+00:00"
         },
         {
             "name": "symfony/console",

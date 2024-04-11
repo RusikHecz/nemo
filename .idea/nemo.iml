@@ -42,13 +42,11 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/giggsey/libphonenumber-for-php" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/giggsey/locale" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/graham-campbell/result-type" />
-      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/graylog2/gelf-php" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/guzzlehttp/uri-template" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/hamcrest/hamcrest-php" />
-      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/hedii/laravel-gelf-logger" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/itsgoingd/clockwork" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/jean85/pretty-package-versions" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravel/framework" />

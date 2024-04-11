@@ -11,7 +11,6 @@
         "doctrine/dbal": "^3.0",
         "fruitcake/laravel-cors": "*",
         "guzzlehttp/guzzle": "^7.2",
-        "hedii/laravel-gelf-logger": "^8.0",
         "laravel/framework": "^10.0",
         "laravel/passport": "^11.0",
         "laravel/sanctum": "^3.3",
@@ -21,11 +20,12 @@
         "ludovicose/remote-permission": "^2.0",
         "ludovicose/transaction-outbox": "3.3.0",
         "maatwebsite/excel": "^3.1",
+        "monolog/monolog": "^3.0",
         "phing/phing": "^2.17",
         "predis/predis": "^1.1",
         "propaganistas/laravel-phone": "^5.1",
         "sentry/sentry-laravel": "^4.1.1",
-        "zircote/swagger-php": "4.0.0"
+        "zircote/swagger-php": "3.2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
