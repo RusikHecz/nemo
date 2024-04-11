@@ -21,27 +21,27 @@ final readonly class CreateAirportHandler
 
     public function handle(CreateAirportCommand $command): void
     {
-	    $airport = null;
+        $airport = null;
 
-	    try {
-		    DB::transaction(function () use ($command, &$airport) {
-			    $airport                  = new Airport();
-			    $airport->iata_code       = $command->DTO->iataCode;
-			    $airport->city_name_ru    = $command->DTO->cityNameRu;
-			    $airport->city_name_en    = $command->DTO->cityNameEn;
-			    $airport->airport_name_ru = $command->DTO->airportNameRu;
-			    $airport->airport_name_en = $command->DTO->airportNameEn;
-			    $airport->area            = $command->DTO->area;
-			    $airport->country         = $command->DTO->country;
-			    $airport->latitude        = $command->DTO->latitude;
-			    $airport->longitude       = $command->DTO->longitude;
-			    $airport->timezone        = $command->DTO->timezone;
+        try {
+            DB::transaction(function () use ($command, &$airport) {
+                $airport                  = new Airport();
+                $airport->iata_code       = $command->DTO->iataCode;
+                $airport->city_name_ru    = $command->DTO->cityNameRu;
+                $airport->city_name_en    = $command->DTO->cityNameEn;
+                $airport->airport_name_ru = $command->DTO->airportNameRu;
+                $airport->airport_name_en = $command->DTO->airportNameEn;
+                $airport->area            = $command->DTO->area;
+                $airport->country         = $command->DTO->country;
+                $airport->latitude        = $command->DTO->latitude;
+                $airport->longitude       = $command->DTO->longitude;
+                $airport->timezone        = $command->DTO->timezone;
 
-			    $this->repository->create($airport);
-		    });
-		} catch (Exception $e) {
-		    Log::info("Ошибка при создании аэропорта {$command->DTO->iataCode}: {$e->getMessage()}");
-		}
+                $this->repository->create($airport);
+            });
+        } catch (Exception $e) {
+            Log::info("Ошибка при создании аэропорта {$command->DTO->iataCode}: {$e->getMessage()}");
+        }
 
         event(new AirportCreatedEvent($airport->id));
     }
