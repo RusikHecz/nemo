@@ -27,7 +27,7 @@
 mysql root: admin12345678 and pass: nemo
 После этого создал новый laravel проект с 10 версией (10 минут)
 Был создан репозитории и залит выше указанные файлы (10 мин)
-Был настроен pipelines в github(actions)для проверки phpcs, psalm, авто тесты при поднятии) в целом проекта на поднятие (полтора часа)
+Был настроен pipelines в github(actions)для проверки phpcs, psalm, AutoUnitTests, Swagger valid, в целом проекта на поднятие (полтора часа)
 Был установлен swagger, путь: {host}/api/documentation#/ (час)
 
 Далее сама логика ТЗ.
