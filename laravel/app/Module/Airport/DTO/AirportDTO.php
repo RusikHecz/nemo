@@ -25,16 +25,15 @@ final class AirportDTO
     public static function fromArray(array $airport): self
     {
         $dto                = new self();
-        $dto->iataCode      = $airport['iataCode'];
-        $dto->cityNameRu    = $airport['cityName']['ru'];
-        $dto->cityNameEn    = $airport['cityName']['en'];
-        $dto->airportNameRu = $airport['airportName']['ru'];
-        $dto->airportNameEn = $airport['airportName']['en'];
-        $dto->area          = $airport['area'];
-        $dto->country       = $airport['country'];
-        $dto->latitude      = $airport['latitude'];
-        $dto->longitude     = $airport['longitude'];
-        $dto->timezone      = $airport['timezone'];
+        $dto->cityNameRu    = $airport['cityName']['ru'] ?? null;
+        $dto->cityNameEn    = $airport['cityName']['en'] ?? null;
+        $dto->airportNameRu = $airport['airportName']['ru'] ?? null;
+        $dto->airportNameEn = $airport['airportName']['en'] ?? null;
+        $dto->area          = $airport['area'] ?? null;
+        $dto->country       = $airport['country'] ?? null;
+        $dto->latitude      = $airport['latitude'] ?? null;
+        $dto->longitude     = $airport['longitude'] ?? null;
+        $dto->timezone      = $airport['timezone'] ?? null;
 
         return $dto;
     }

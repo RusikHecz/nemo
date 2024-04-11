@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Airport;
 
+use App\Libraries\Codes\ResponseCodes;
 use App\Module\Airport\Commands\CreateAirportCommand;
 use App\Module\Airport\DTO\AirportDTO;
 use App\Module\Airport\Models\Airport;
@@ -48,5 +49,32 @@ final class AirportTest extends TestCase
             'longitude'       => $dto->longitude,
             'timezone'        => $dto->timezone,
         ]);
+    }
+
+    public function testGetCountries()
+    {
+        $airports = Airport::factory(5)->create();
+
+        $response = $this->get(route('airports.index'));
+
+        $response->assertStatus(ResponseCodes::SUCCESS)
+            ->assertJsonStructure([
+                'data' => [
+                    '*' => [
+                        'id',
+                        'iataCode',
+                        'cityNameRu',
+                        'cityNameEn',
+                        'airportNameRu',
+                        'airportNameEn',
+                        'area',
+                        'country',
+                        'latitude',
+                        'longitude',
+                        'timezone',
+                    ]
+                ],
+            ])
+            ->assertJsonPath('data.*.id', $airports->pluck('id')->toArray());
     }
 }

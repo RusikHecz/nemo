@@ -6,6 +6,7 @@ namespace App\Module\Airport\Handlers;
 
 use App\Module\Airport\Commands\CreateAirportCommand;
 use App\Module\Airport\Contracts\Repositories\CreateAirportRepository;
+use App\Module\Airport\Events\AirportCreatedEvent;
 use App\Module\Airport\Models\Airport;
 
 final readonly class CreateAirportHandler
@@ -30,5 +31,7 @@ final readonly class CreateAirportHandler
         $airport->timezone        = $command->DTO->timezone;
 
         $this->repository->create($airport);
+
+        event(new AirportCreatedEvent($airport->id));
     }
 }
