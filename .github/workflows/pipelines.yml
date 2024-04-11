@@ -35,7 +35,7 @@ jobs:
         run: ./vendor/bin/psalm
 
       # Swagger
-      - name: Run Test
+      - name: Run Swagger Check
         working-directory: ./laravel
         run: php artisan l5-swagger:generate
 
