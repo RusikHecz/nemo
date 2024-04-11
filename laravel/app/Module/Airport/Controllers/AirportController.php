@@ -5,18 +5,27 @@ declare(strict_types=1);
 namespace App\Module\Airport\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Module\Airport\Permissions\PermissionList;
+use App\Module\Airport\Contracts\Services\AirportService;
+use App\Module\Airport\Requests\AirportRequest;
+use App\Module\Airport\Resources\AirportsResource;
 use Illuminate\Auth\Access\AuthorizationException;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 final class AirportController extends Controller
 {
+    public function __construct(
+        private readonly AirportService $service
+    ) {
+    }
+
     /**
      * @OA\Get(
      *     path="/airports",
      *     summary="Полный список аэропортов",
      *     operationId="getListOfAirports",
      *     tags={"Airport"},
+     *
+     *     @OA\Parameter(ref="#/components/parameters/__limit"),
+     *     @OA\Parameter(ref="#/components/parameters/__page"),
      *
      *     @OA\Parameter(
      *         name="airportName",
@@ -32,19 +41,18 @@ final class AirportController extends Controller
      *         response=200,
      *         description="Полный список аэропортов",
      *         @OA\JsonContent(
-     *             @OA\Property(property="data",
-     *                 type="object",
-     *              ),
+     *             @OA\Property(property="data",type="object",ref="#/components/schemas/AirportResource"),
      *         )
      *     ),
      *     security={
      *         {"bearer": {}}
      *     }
      * )
-     * @throws AuthorizationException
      */
-    public function index(): void
+    public function index(AirportRequest $request): AirportsResource
     {
-        $this->authorize(PermissionList::AIRPORT_INDEX);
+        return new AirportsResource(
+            $this->service->getAll($request->getDTO())
+        );
     }
 }

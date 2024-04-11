@@ -14,6 +14,12 @@
                 "operationId": "getListOfAirports",
                 "parameters": [
                     {
+                        "$ref": "#/components/parameters/__limit"
+                    },
+                    {
+                        "$ref": "#/components/parameters/__page"
+                    },
+                    {
                         "name": "airportName",
                         "in": "query",
                         "description": "название аэропорта",
@@ -25,13 +31,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Список рейсов",
+                        "description": "Полный список аэропортов",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "type": "object"
+                                            "$ref": "#/components/schemas/AirportResource"
                                         }
                                     },
                                     "type": "object"
@@ -45,6 +51,108 @@
                         "bearer": []
                     }
                 ]
+            }
+        },
+        "/test": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Test"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AirportResource": {
+                "properties": {
+                    "id": {
+                        "description": "ID аэропорта",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "iataCode": {
+                        "description": "IATA код аэропорта",
+                        "type": "string",
+                        "example": "SVO"
+                    },
+                    "cityNameRu": {
+                        "description": "Название города на русском",
+                        "type": "string",
+                        "example": "Москва"
+                    },
+                    "cityNameEn": {
+                        "description": "Название города на английском",
+                        "type": "string",
+                        "example": "Moscow"
+                    },
+                    "airportNameRu": {
+                        "description": "Название аэропорта на русском",
+                        "type": "string",
+                        "example": "Шереметьево"
+                    },
+                    "airportNameEn": {
+                        "description": "Название аэропорта на английском",
+                        "type": "string",
+                        "example": "Sheremetyevo"
+                    },
+                    "area": {
+                        "description": "Район аэропорта",
+                        "type": "string",
+                        "example": "Северный"
+                    },
+                    "country": {
+                        "description": "Страна аэропорта",
+                        "type": "string",
+                        "example": "RU"
+                    },
+                    "latitude": {
+                        "description": "Широта местоположения аэропорта",
+                        "type": "string",
+                        "example": "55.972642"
+                    },
+                    "longitude": {
+                        "description": "Долгота местоположения аэропорта",
+                        "type": "string",
+                        "example": "37.414589"
+                    },
+                    "timezone": {
+                        "description": "Часовой пояс аэропорта",
+                        "type": "string",
+                        "example": "Europe/Moscow"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "parameters": {
+            "__id": {
+                "name": "id",
+                "in": "path",
+                "description": "ID сущности",
+                "schema": {
+                    "type": "integer",
+                    "default": 1
+                }
+            },
+            "__page": {
+                "name": "page",
+                "in": "query",
+                "description": "Номер страницы",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "__limit": {
+                "name": "limit",
+                "in": "query",
+                "description": "Количество данных для показа",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
             }
         }
     }
