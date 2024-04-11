@@ -17,17 +17,21 @@ jobs:
           tools: composer, php-cs-fixer, psalm, swagger-cli
 
       - name: Validate composer.json and composer.lock
+        working-directory: ./laravel
         run: composer validate
 
       - name: Install dependencies
+        working-directory: ./laravel
         run: composer install --prefer-dist --no-progress --no-suggest
 
       # PHPCS
       - name: Check PSR-12 code standards
+        working-directory: ./laravel
         run: ./vendor/bin/phpcs
 
       # Psalm
       - name: Run Psalm
+        working-directory: ./laravel
         run: ./vendor/bin/psalm
 
       # Swagger
