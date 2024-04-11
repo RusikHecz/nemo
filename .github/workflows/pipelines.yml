@@ -13,6 +13,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+          working-directory: ./laravel
           extensions: mbstring, xml
           tools: composer, php-cs-fixer, psalm, swagger-cli
 
