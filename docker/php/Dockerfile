@@ -18,8 +18,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 ### End Init install
 
 # Install Redis
-RUN pecl install redis
-RUN docker-php-ext-enable redis
+RUN pecl install redis \
+    && docker-php-ext-enable redis \
+    && rm -rf /tmp/pear \
 
 # Install Mongodb
 RUN pecl install mongodb
