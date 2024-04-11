@@ -41,4 +41,5 @@ jobs:
 
       # АвтоТесты
       - name: Run Test
+        working-directory: ./laravel
         run: php artisan test --parallel
