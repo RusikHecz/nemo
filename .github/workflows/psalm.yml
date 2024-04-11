@@ -1,38 +1,35 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
+name: PHP CI
 
-name: Psalm Security Scan
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
-  schedule:
-    - cron: '18 14 * * 6'
-
-permissions:
-  contents: read
+on: [push]
 
 jobs:
-  php-security:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read # for actions/checkout to fetch code
-      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - name: Psalm Security Scan
-        uses: psalm/psalm-github-security-scan@f3e6fd9432bc3e44aec078572677ce9d2ef9c287
-
-      - name: Upload Security Analysis results to GitHub
-        uses: github/codeql-action/upload-sarif@v2
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
         with:
-          sarif_file: results.sarif
+          php-version: '8.2'
+          extensions: mbstring, xml
+          tools: composer, php-cs-fixer, psalm, swagger-cli
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      # PHPCS
+      - name: Check PSR-12 code standards
+        run: ./vendor/bin/phpcs --standard=PSR12 src/
+
+      # Psalm
+      - name: Run Psalm
+        run: ./vendor/bin/psalm
+
+      # Swagger
+      - name: Validate Swagger
+        run: swagger-cli validate path/to/your/swagger.yaml
