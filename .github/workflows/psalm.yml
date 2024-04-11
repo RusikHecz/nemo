@@ -24,7 +24,7 @@ jobs:
 
       # PHPCS
       - name: Check PSR-12 code standards
-        run: ./vendor/bin/phpcs --standard=PSR12 src/
+        run: ./vendor/bin/phpcs
 
       # Psalm
       - name: Run Psalm
@@ -32,4 +32,4 @@ jobs:
 
       # Swagger
       - name: Validate Swagger
-        run: swagger-cli validate path/to/your/swagger.yaml
+        run: php artisan l5-swagger:generate
